@@ -1,9 +1,9 @@
-const apiKey = "2d62da0f2ee24d92bcb6df65b3eb988e";
 const searchtext = document.getElementById("tx");
 
 async function fetchNews(category) {
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`);
+        const url = `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`;
+        const response = await fetch(url);
         const data = await response.json();
 
         const newsList = document.getElementById('news-list');
@@ -48,3 +48,5 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchNews(category);
     });
 });
+
+ 
